@@ -81,7 +81,7 @@ Ok to proceed? (y) y
 ✔ Would you like to use App Router? (recommended) … Yes
 ✔ Would you like to customize the default import alias? … Yes
 ✔ What import alias would you like configured? … @/*
-Creating a new Next.js app in /Users/hkatayama/Desktop/hobby/nextjs-approuter/nextjs-approuter.
+Creating a new Next.js app in /Users/XXX/YYY/nextjs-approuter.
 
 Using npm.
 
