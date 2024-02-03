@@ -87,3 +87,55 @@ Using npm.
 
 Initializing project with template: app
 ```
+
+### httpsで開発サーバを起動する
+
+- 事前準備(mkcertのインストール)
+
+```sh
+brew install mkcert
+```
+
+```sh
+base ❯ mkcert -install
+Sudo password:
+The local CA is now installed in the system trust store! ⚡️
+```
+
+- 事前準備(証明書の作成)
+
+```sh
+mkcert localhost
+```
+
+- 出力ログ
+
+```
+base ❯ mkcert localhost
+Created a new local CA 💥
+Note: the local CA is not installed in the system trust store.
+Run "mkcert -install" for certificates to be trusted automatically ⚠️
+
+Created a new certificate valid for the following names 📜
+ - "localhost"
+
+The certificate is at "./localhost.pem" and the key at "./localhost-key.pem" ✅
+
+It will expire on 3 May 2026 🗓
+```
+
+- package.json の script に以下を追加
+
+```sh
+"dev:https": "next dev -p 4444 & local-ssl-proxy --key localhost-key.pem --cert localhost.pem --source 3333 --target 4444"
+```
+
+npm run dev:https を実行すると，https://localhost:3333 でアクセス可能
+
+```sh
+> nextjs-approuter@0.1.0 dev:https
+> next dev -p 4444 & local-ssl-proxy --key localhost-key.pem --cert localhost.pem --source 3333 --target 4444
+
+Started proxy: https://localhost:3333 → http://localhost:4444
+- ready started server on [::]:4444, url: http://localhost:4444
+```
