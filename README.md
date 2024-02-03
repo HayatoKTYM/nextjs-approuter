@@ -4,6 +4,21 @@
 
 [公式 Document](https://nextjs.org/docs/app)
 
+## how to
+
+```sh
+npm run dev   開発サーバ起動
+npm run build 本番環境のためのビルド
+npm run start 本番サーバ起動
+npm run lint  Lintチェック
+```
+
+http://localhost:3000/ にアクセスすると以下の画面が表示される
+
+(擬似的な認証機能を付与)
+
+![login](images/login.png)
+
 ## basic information
 
 `Pages Router`(`pages/`)から`App Router`(`app/`)に変更された．
@@ -28,15 +43,6 @@
 - [useRouter](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#userouter-hook)
 
 **ただし，`useRouter`はクライアントサイドでのみ利用可能**
-
-## how to
-
-```sh
-npm run dev   開発サーバ起動
-npm run build 本番環境のためのビルド
-npm run start 本番サーバ起動
-npm run lint  Lintチェック
-```
 
 ## Tips
 
